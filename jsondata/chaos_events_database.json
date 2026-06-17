@@ -1,0 +1,144 @@
+[
+  {
+    "eventId": "evt_lost_bags",
+    "message": "URGENT: The airline misplaced your clients' luggage on arrival! They are absolutely refusing to go out to their high-end evening arrangements wearing their airport clothes. How do you handle this?",
+    "choices": [
+      {
+        "text": "Send emergency funds to purchase high end local garments.",
+        "budgetImpact": -300,
+        "scorePenalty": 0
+      },
+      {
+        "text": "Tell them to wait for airline courier delivery",
+        "budgetImpact": 0,
+        "scorePenalty": -20
+      }
+
+    ]
+  },
+  {
+    "eventId": "evt_overbooked_lodge",
+    "message": "HOTEL ADVISORY: Due to clerical error, the booked lodging has double booked the clients room category. They are offering an immediate choice to resolve the conflict.",
+    "choices": [
+      {
+        "text": "Bribe the front desk manager for a VIP penthouse upgrade",
+        "budgetImpact": -400,
+        "scorePenalty": 10
+      },
+      {
+        "text": "Accept downgrade to standard quarters with a basic diner voucher",
+        "budgetImpact": 0,
+        "scorePenalty": -15
+      }
+    ]
+  },
+  {
+    "eventId": "evt_weather_cancellation",
+    "message": "WEATHER ALERT: Severe localized storms have forced the cancellation of the planned outdoor activites! Your clients are sitting in the hotel lobby feeling thoroughly dissapointed.",
+    "choices": [
+      {
+        "text": "Secure last-minute tickets to an exclusive private indoor showcase.",
+        "budgetImpact": -250,
+        "scorePenalty": 5
+      },
+      {
+        "text": "Apologize and issue a standard local (maybe partial) refund.",
+        "budgetImpact": 100,
+        "scorePenalty": -10
+      }
+    ]
+  },
+  {
+    "eventId": "evt_medical_scare",
+    "message": "MEDICAL: Your client reports a sudden bout of severe food poisoning from a questionable street food stand and cannot leave their room!",
+    "choices": [
+      {
+        "text": "Dispatch a private on-call hotel physician to prescribe fast acting treatment.",
+        "budgetImpact": -350,
+        "scorePenalty": 0
+      },
+      {
+        "text": "Advice them to rely on a local drugstore delivery service",
+        "budgetImpact": 0,
+        "scorePenalty": -15
+      }
+    ]
+  },
+  {
+    "eventId": "evt_transit_strike",
+    "message": "TRANSIT ALARM: A sudden public transportation and taxi strike has completely paralyzed the city! Your clients are stranded at the central station.",
+    "choices": [
+      {
+        "text": "Hire a premium private executive driver who is bypass authorized.",
+        "budgetImpact": -200,
+        "scorePenalty": 5
+      },
+      {
+        "text": "Instruct them to sit tight at the station lounge and wait it out",
+        "budgetImpact": 0,
+        "scorePenalty": -15
+
+      }
+
+    ]
+  },
+  {
+    "eventId": "evt_double_booked_flight",
+    "message": "FLIGHT ALERT: The airline has bumped your clients from their scheduled route due to overbooking! They are furious and stranded at the airport check-in desk.",
+    "choices": [
+      {
+        "text": "INstantly purchase seat upgrades on a rival premium carrier departing in 1 hour",
+        "budgetImpact": -500,
+        "scorePenalty": 15
+      },
+      {
+        "text": "File a formal complaint and make them wait for the standby flight in 6 hours",
+        "budgetImpact": 0,
+        "scorePenalty": -25
+      }
+    ]
+  },
+  {
+    "eventId": "evt_camera_theft",
+    "message": "SECURITY INCIDENT: Your client had their professional camera bag swiped in a bustling city market! They are extremely stressed about losing their vacation photos.",
+    "choices": [
+      {
+        "text": "Purchase an identical high end replacement body from certified boutique nearby",
+        "budgetImpact": -600,
+        "scorePenalty": 10
+      },
+      {
+        "text": "Help them file an official police report for insurance later.",
+        "budgetImpact": 0,
+        "scorePenalty": -15
+      }
+    ]
+  },
+  {
+    "eventId": "evt_vip_lounge_mixup",
+    "message": "The clients were turned away from the airport VIP club lounge due to an unconfirmed booking confirmation reference number.",
+    "choices": [
+      {
+        "text": "Authorize an immediate wire payment for single use executive passes.",
+        "budgetImpact": -150,
+        "scorePenalty": 0
+      },
+      {
+        "text": "Advise them to utilise the regular boarding gate seating options",
+        "budgetImpact": 0,
+        "scorePenalty": -10
+      }
+    ]
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
