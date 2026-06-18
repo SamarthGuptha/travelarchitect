@@ -1,0 +1,30 @@
+[
+  {
+    "clientId": "c_001",
+    "clientName": "The Honeymooners",
+    "budget": 4500,
+    "partySize": 2,
+    "durationDays": 7,
+    "narrativeEmail": "We finally got married! W want a romantic, slow paced getaway next week. My husband burns easily in the sun, and we absolutely hate crowded tourist traps. We want our own private space, quiet, and great culinary experiences. No shared hostels for us please!",
+    "hiddenMustHaves": ["shade", "culinary","private_lodging","isolation"],
+    "hiddenDealBreakers": ["hostel", "tourist_trap","beach","nightlife"],
+    "reviews": {
+      "perfect": "An absolute dream. Completely isolated, exquisite food, and we had our own gorgeous private villa. 5 stars!",
+      "pass": "It was quiet and the food was good, but we ended up staying too close to a noisy beach. 3Stars",
+      "fail": "A nightmare. you put is a noisy backpacker hostel and near a tourist trap! 1 star."
+    }
+  },
+  {
+    "clientId": "c_002",
+    "clientName": "Budget Grads",
+    "budget": 1200,
+    "partySize": 2,
+    "durationDays": 5,
+    "narrativeEmail": "My best friend and I just graduated college and we are super broke! We want a sunny, high energy holiday in europe. We love staying up late, partying, and tanning on the beach. We dont care if a place is noise, crowded, or if we have to share rooms, as long as it's cheap and near the clubs!!!",
+    "hiddenMustHaves": ["beach","nightlife","europe","budget"],
+    "hiddenDealBreakers": ["freezing","expensive","isolation", "luxury"],
+    "reviews": {
+
+    }
+  }
+]

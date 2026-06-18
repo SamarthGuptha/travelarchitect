@@ -1,0 +1,264 @@
+{
+  "flights": [
+    {
+      "id": "f_101",
+      "name": "EuroWing Direct",
+      "country": "Europe",
+      "basePrice": 350,
+      "tags": ["europe", "luxury"],
+      "volatility": "low"
+    },
+    {
+      "id": "f_102",
+      "name": "Vagabond Air (Layovers)",
+      "country": "Europe",
+      "basePrice": 120,
+      "tags": ["europe", "budget"],
+      "volatility": "high"
+    },
+    {
+      "id": "f_103",
+      "name": "PanAm Transatlantic",
+      "country": "Americas",
+      "basePrice": 500,
+      "tags": ["luxury"],
+      "volatility": "low"
+    },
+    {
+      "id": "f_104",
+      "name": "Orient ExpressJet",
+      "country": "Asia",
+      "basePrice": 450,
+      "tags": ["asia", "luxury"],
+      "volatility": "medium"
+    },
+    {
+      "id": "f_105",
+      "name": "Backpacker Jet",
+      "country": "Asia",
+      "basePrice": 180,
+      "tags": ["asia", "budget"],
+      "volatility": "high"
+    },
+    {
+      "id": "f_106",
+      "name": "Alpine Hopper Helicopter",
+      "country": "Switzerland",
+      "basePrice": 600,
+      "tags": ["luxury", "scenic"],
+      "volatility": "medium"
+    },
+    {
+      "id": "f_107",
+      "name": "BasicJet",
+      "country": "Global",
+      "basePrice": 100,
+      "tags": ["budget"],
+      "volatility": "high"
+    },
+    {
+      "id": "f_108",
+      "name": "Sovereign First-Class",
+      "country": "Global",
+      "basePrice": 1100,
+      "tags": ["luxury"],
+      "volatility": "low"
+    }
+  ],
+  "lodgings": [
+    {
+      "id": "l_201",
+      "name": "Secluded Alpine Chalet",
+      "country": "Switzerland",
+      "basePrice": 280,
+      "tags": ["private_lodging", "shade", "nature", "scenic", "luxury"],
+      "volatility": "medium"
+    },
+    {
+      "id": "l_202",
+      "name": "St. Pauli Party Hostel",
+      "country": "Germany",
+      "basePrice": 25,
+      "tags": ["hostel", "nightlife", "europe", "budget", "tourist_trap"],
+      "volatility": "low"
+    },
+    {
+      "id": "l_203",
+      "name": "Andes Glacier Basecamp",
+      "country": "Argentina",
+      "basePrice": 90,
+      "tags": ["freezing", "nature", "adventure", "high_altitude"],
+      "volatility": "medium"
+    },
+    {
+      "id": "l_204",
+      "name": "Siam Heritage Boutique Hotel",
+      "country": "Thailand",
+      "basePrice": 90,
+      "tags": ["asia", "urban", "culinary", "accessible", "luxury"],
+      "volatility": "low"
+    },
+    {
+      "id": "l_205",
+      "name": "The Hermitage Sanctuary",
+      "country": "Japan",
+      "basePrice": 320,
+      "tags": ["wellness", "nature", "isolation", "private_lodging", "luxury"],
+      "volatility": "high"
+    },
+    {
+      "id": "l_206",
+      "name": "Sunny Shores Resort",
+      "country": "Spain",
+      "basePrice": 220,
+      "tags": ["beach", "kid_friendly", "accessible", "europe", "luxury"],
+      "volatility": "medium"
+    },
+    {
+      "id": "l_207",
+      "name": "Algarve Coastal Caves Inn",
+      "country": "Portugal",
+      "basePrice": 75,
+      "tags": ["beach", "scenic", "shade", "europe", "budget"],
+      "volatility": "medium"
+    },
+    {
+      "id": "l_208",
+      "name": "Kuta Backpacker Lodge",
+      "country": "Indonesia",
+      "basePrice": 15,
+      "tags": ["hostel", "beach", "nightlife", "asia", "budget"],
+      "volatility": "low"
+    },
+    {
+      "id": "l_209",
+      "name": "Peak View Refuge",
+      "country": "Nepal",
+      "basePrice": 45,
+      "tags": ["high_altitude", "adventure", "isolation", "budget"],
+      "volatility": "high"
+    },
+    {
+      "id": "l_210",
+      "name": "The Manhattan Tower",
+      "country": "USA",
+      "basePrice": 400,
+      "tags": ["urban", "luxury", "accessible", "culinary"],
+      "volatility": "high"
+    },
+    {
+      "id": "l_211",
+      "name": "Verdant Canopy Treehouses",
+      "country": "Costa Rica",
+      "basePrice": 180,
+      "tags": ["nature", "isolation", "adventure", "scenic"],
+      "volatility": "medium"
+    },
+    {
+      "id": "l_212",
+      "name": "Grand Piazza Hotel",
+      "country": "Italy",
+      "basePrice": 250,
+      "tags": ["europe", "luxury", "accessible", "culinary","tourist_trap"],
+      "volatility": "low"
+    }
+  ],
+  "excursions": [
+    {
+      "id": "e_301",
+      "name": "Michelin Private Dinner",
+      "country": "Global",
+      "basePrice": 160,
+      "tags": ["culinary", "Luxury"],
+      "volatility": "low"
+    },
+    {
+      "id": "e_302",
+      "name": "Guided Matterhorn Ridge climb",
+      "country": "Switzerland",
+      "basePrice": 300,
+      "tags": ["adventure", "high_altitude", "scenic"],
+      "volatility": "high"
+    },
+    {
+      "id": "e_303",
+      "name": "VIP Club Hopping tour",
+      "country": "Global",
+      "basePrice": 110,
+      "tags": ["nightlife","tourist_trap"],
+      "volatility": "medium"
+    },
+    {
+      "id": "e_304",
+      "name": "Yoga",
+      "country": "Global",
+      "basePrice": 80,
+      "tags": ["wellness", "nature", "shade"],
+      "volatility": "medium"
+    },
+    {
+      "id": "e_305",
+      "name": "Street Food and back alley bike ride!",
+      "country": "Global",
+      "basePrice": 30,
+      "tags": ["culinary", "urban","budget"],
+      "volatility": "low"
+    },
+    {
+      "id": "e_306",
+      "name": "Tide Pool Exploration and Picnic",
+      "country": "Global",
+      "basePrice": "50",
+      "tags": ["kid_friendly","beach","shade"],
+      "volatility": "low"
+    },
+    {
+      "id": "e_307",
+      "name": "Extreme Frozen Descent",
+      "country": "Global",
+      "basePrice": 450,
+      "tags": ["adventure", "freezing", "nature"],
+      "volatility": "high"
+    },
+    {
+      "id": "e_308",
+      "name":"Ancient Ruins Sunset Tour",
+      "country": "Global",
+      "basePrice": 70,
+      "tags": ["scenic", "accessible", "tourist_trap"],
+      "volatility": "low"
+    },
+    {
+      "id": "e_309",
+      "name": "Desert Dune Buggy",
+      "country":"Global",
+      "basePrice": 140,
+      "tags":["adventure","nature"],
+      "volatility": "medium"
+    },
+    {
+      "id": "e_310",
+      "name": "Quiet Tea Ceremony & Gardens Walk",
+      "country": "Japan",
+      "basePrice": 95,
+      "tags": ["wellness", "shade", "isolation"],
+      "volatility": "low"
+    },
+    {
+      "id": "e_311",
+      "name": "Glacier Helicopter Flight and Hike",
+      "country": "Switzerland",
+      "basePrice": 550,
+      "tags":["scenic", "adventure", "luxury","adventure","freezing"],
+      "volatility": "high"
+    },
+    {
+      "id": "e_312",
+      "name": "Tasting Menu in History",
+      "country": "Europe",
+      "basePrice": 125,
+      "tags": ["culinary","europe","luxury"],
+      "volatility": "medium"
+    }
+  ]
+}
