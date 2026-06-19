@@ -21,10 +21,83 @@
     "partySize": 2,
     "durationDays": 5,
     "narrativeEmail": "My best friend and I just graduated college and we are super broke! We want a sunny, high energy holiday in europe. We love staying up late, partying, and tanning on the beach. We dont care if a place is noise, crowded, or if we have to share rooms, as long as it's cheap and near the clubs!!!",
-    "hiddenMustHaves": ["beach","nightlife","europe","budget"],
-    "hiddenDealBreakers": ["freezing","expensive","isolation", "luxury"],
+    "hiddenMustHaves": [
+      "beach",
+      "nightlife",
+      "europe",
+      "budget"
+    ],
+    "hiddenDealBreakers": [
+      "freezing",
+      "expensive",
+      "isolation",
+      "luxury"
+    ],
     "reviews": {
+      "perfect": "Unbelievable! We partied every night on the beach, stayed in a cheap social hostel, and saved cash! 5 Stars.",
+      "pass": "The nightlife was fun, but the flights were way too expensive and drained our pocket money. 3 Stars.",
+      "fail": "We were freezing cold, isolated in the mountains, and there was zero nightlife. Terrible. 1 Star."
+    }
+  },
+  {
+    "clientId": "c_003",
+    "clientName": "The Silver Scenics",
+    "budget": 5500,
+    "partySize": 2,
+    "durationDays": 8,
+    "narrativeEmail": "We are celebrating our retirement and want to enjoy majesticc natural scenery, quiet mountain vistas, and deep cultural history. We require comfortable, highly accessible lodgings as my wife has minor knee trouble. NO high altitude climbing or rowdy nightlife just peaceful scenic comfort.",
+    "hiddenMustHaves": ["scenic", "accessible","nature", "luxury"],
+    "hiddenDealBreakers": ["nightlife", "adventure", "hostel", "high_altitude"],
+    "reviews": {
+      "perfect": "Exquisite mountain views, comfortable luxury rooms with no stairs, and total peace. Exactly what we wanted! 5 Stars.",
+      "pass": "The Scenery was spectacular, but our lodging had a steep walk up a hill that hurt my knees 3 stars.",
+      "fail": "You sent me to a remote mountain cabin with zero cell signal and freezing temperatures. Unplayable. 1 Star."
+  }
+  },
+  {
+    "clientId": "c_004",
+    "clientName": "The Nomadic Coder",
+    "budget": 2000,
+    "partySize": 1,
+    "durationDays": 10,
+    "narrativeEmail": "I work remotely and need a productive but inspiring stay in Asia. Fast Wi-Fi, excellent local cafes with strong coffee, and a hip, vibrant urban environment are non-negotiable. I want a private room, but I hate expensive luxury resorts. Keep it trendy, urban, and modern.",
+    "hiddenMustHaves": ["asia", "urban", "culinary", "budget"],
+    "hiddenDealBreakers": ["isolation", "luxury", "freezing", "nature"],
+    "reviews": {
+      "perfect": "Incredible espresso bars, cozy study spaces, and a lively city vibe. My productivity was off the charts! 5 Stars.",
+      "pass": "Good coffee, but I felt too isolated from the city center in the suburban hotel. 3 Stars.",
+      "fail": "You sent me to a remote mountain cabin with zero cell signal and freezing temperatures. Unplayable. 1 Star."
+    }
+  },
 
+  {
+    "clientId": "c_005",
+    "clientName": "The Wild Guy",
+    "budget": 3000,
+    "partySize": 1,
+    "durationDays": 6,
+    "narrativeEmail": "Skip the pampering, the spas, and the five-star resorts. I want to test my limits in extreme environments! Send me somewhere rugged, high-altitude, or freezing cold. I want to climb, trek, and explore the wild. I don't mind basic sleeping arrangements as long as adventure is right outside.",
+    "hiddenMustHaves": ["adventure", "freezing", "nature", "high_altitude"],
+    "hiddenDealBreakers": ["luxury", "beach", "urban", "tourist_trap"],
+    "reviews": {
+      "perfect": "Brutal weather, sheer cliffs, and thrilling climbs. I have never felt more alive. Exceptional routing! 5 Stars.",
+      "pass": "The hiking was decent, but the town felt a bit too touristy and comfortable for a real expedition. 3 Stars.",
+      "fail": "You booked me at a luxury beach resort with a swim-up bar. I was bored out of my mind. 1 Star."
+    }
+  },
+  {
+    "clientId": "c_006",
+    "clientName": "Toddlers",
+    "budget": 4200,
+    "partySize": 3,
+    "durationDays": 6,
+    "narrativeEmail": "We are travelling with our energetic 3 year old. We need a stress free beach getaway where everything is a kid friendly, Quiet shallow waters and closeby medical amenities. Long, complicated multi stop flights or exhausting wilderness hikes are absolute dealbreakers.",
+    "hiddenMustHaves": ["beach", "kid_friendly", "accessible","luxury"],
+    "hiddenDealBreakers": ["adventure","high_altitude", "hostel", "nightlife"],
+    "reviews": {
+      "perfect": "Stunning private beach cove, kid's play areas, and a direct flight. Our toddler slept the whole way! 5 Stars.",
+      "pass": "The resort was fine, but the loud adjacent night club made it impossible to put our child to sleep. 3 Stars.",
+      "fail": "A total logistical disaster. You booked us on a multi-layover flight followed by a rugged mountain hike. 1 Star."
     }
   }
 ]
