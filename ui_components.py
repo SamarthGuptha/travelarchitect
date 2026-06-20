@@ -61,3 +61,27 @@ class ItineraryLedgerPanel(tk.Frame):
     def __init__(self, master):
         super().__init__(master, bg=config.paper)
         tk.Label(self, text="Itinerary Ledger", font=config.fontHeader, bg=config.paper, fg=config.ink).pack(pady=(10,5))
+
+        self.lblFlightSlot = tk.Label(self, text="Flight: [Empty]", bg=config.paper, font=config.fontList, fg=config.ink)
+        self.lblFlightSlot.pack(anchor="w", padx=10, pady=2)
+        self.lblLodgingSlot = tk.Label(self, text="Lodging: [Empty]", bg=config.paper, font=config.fontList, fg=config.ink)
+        self.lblLodgingSlot.pack(anchor="w", padx=10, pady=2)
+        self.lblExcursionSlot = tk.Label(self, text="Excursion: [Empty]", bg=config.paper, font=config.fontList, fg=config.ink)
+        self.lblExcursionSlot.pack(anchor="w",padx=10,pady=2)
+
+        budgetFrame = tk.Frame(self, bg=config.parchment, padx=5,pady=5)
+        budgetFrame.pack(fill=tk.X, padx=10, pady=20)
+
+        self.lblStarting = tk.Label(budgetFrame, text="Starting Budget: $0", bg=config.parchment, font=config.fontMath, fg=config.ink)
+        self.lblCosts = tk.Label(budgetFrame, text="Total Costs: $0", bg=config.parchment, font=config.fontMath, fg=config.terracotta)
+        self.lblReserve = tk.Label(budgetFrame, text="Available Funds: $0", bg=config.parchment, font=config.fontMath, fg=config.sageGreen)
+        self.lblStarting.pack(anchor="w", pady=2)
+        self.lblCosts.pack(anchor="w",pady=2)
+        self.lblReserve.pack(anchor="w",pady =2)
+
+        self.btnAdvance = tk.Button(self, text="Advance Day", bg=config.highlight, fg=config.ink, font=config.fontList, relief=tk.FLAT, activebackground=config.colorBorder)
+        self.btnAdvance.pack(fill=tk.X, padx=10, pady=5)
+
+
+        self.btnDispatch = tk.Button(self, text="Dispatch Itinerary", bg=config.ink, fg=config.paper, font=config.fontList, relief = tk.FLAT, activebackground=config.mutedSlate, activeforeground=config.paper)
+        self.btnDispatch.pack(fill=tk.X, padx=10, pady=5)

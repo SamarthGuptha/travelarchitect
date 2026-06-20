@@ -1,4 +1,4 @@
-import json, os
+import json, os, random
 
 class Client:
     def __init__(self, data):
@@ -23,6 +23,7 @@ class CatalogItem:
         self.tags=data.get("tags", [])
         self.volatility = data.get("volatility", "low")
         self.currentPrice = self.basePrice
+        self.prevPrice = self.basePrice
 
 class ChaosEvent:
     def __init__(self,data):
@@ -56,4 +57,13 @@ class DataManager:
             with open(os.path.join(baseDir, "chaos_events_database.json"), 'r', encoding='utf-8') as f:
                 self.events = [ChaosEvent(e) for e in json.load(f)]
         else: print(f"Missing chaos events file")
+
+    def mutatePrices(self):
+        volMap = {'low':(0.02, 0.05), 'medium': (0.05, 0.15), 'high': (0.10, 0.30)}
+        for category in (self.flights, self.lodgings, self.excursions):
+            for item in category:
+                item.prevPrice = item.currentPrice
+                minV, maxV = volMap.get(item.volatility, (0.02, 0.05))
+                change = random.uniform(minV, maxV)*random.choice([1, -1])
+                item.currentPrice = max(1, int(item.currentPrice*(1+change)))
 
