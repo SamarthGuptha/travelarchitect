@@ -24,10 +24,10 @@ class DossierPanel(tk.Frame):
         self.lblParams = tk.Label(self, text="Party: 0 | Duration: 0 Days", font=config.fontList, bg=config.paper, fg=config.mutedSlate)
         self.lblParams.pack(anchor="w",padx=10,pady=(0,10))
 
-        self.txt_email = tk.Text(self, height=8, font=config.fontNarrative, bg=config.parchment, fg=config.ink, wrap=tk.WORD, bd=0,padx=5,pady=5)
-        self.txt_email.pack(fill=tk.X, padx=10, pady=5)
-        self.txt_email.insert(tk.END, "Awaiting client email...")
-        self.txt_email.config(state=tk.DISABLED)
+        self.txtEmail = tk.Text(self, height=8, font=config.fontNarrative, bg=config.parchment, fg=config.ink, wrap=tk.WORD, bd=0,padx=5,pady=5)
+        self.txtEmail.pack(fill=tk.X, padx=10, pady=5)
+        self.txtEmail.insert(tk.END, "Awaiting client email...")
+        self.txtEmail.config(state=tk.DISABLED)
 
         tk.Label(self, text="Agent Scratchpad", font=config.fontList, bg=config.paper, fg=config.mutedSlate).pack(anchor="w", padx=10, pady=(10,0))
         self.txt_scratchpad = tk.Text(self, font=config.fontList, bg=config.parchment, fg=config.ink, wrap=tk.WORD,bd=0,padx=5,pady =5)

@@ -37,6 +37,7 @@ class DataManager:
         self.lodgings=[]
         self.excursions=[]
         self.events = []
+        self.load_databases()
 
     def load_databases(self):
         baseDir = "jsondata"
@@ -66,4 +67,19 @@ class DataManager:
                 minV, maxV = volMap.get(item.volatility, (0.02, 0.05))
                 change = random.uniform(minV, maxV)*random.choice([1, -1])
                 item.currentPrice = max(1, int(item.currentPrice*(1+change)))
+
+    def evaluate_itinerary(self, client, itinerary):
+        tags= set()
+        for item in itinerary.values():
+            if item: tags.update(item.tags)
+
+        score=70
+        for req in client.hiddenMustHaves:
+            if req in tags: score +=15
+            else: score -= 15
+
+        for db in client.hiddenDealBreakers:
+            if db in tags: score -= 30
+
+        return score
 
