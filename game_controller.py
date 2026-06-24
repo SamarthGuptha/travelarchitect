@@ -71,9 +71,10 @@ class GameController:
         if self.timeLeft>0:
             self.timeLeft-= 1
             self.app.headerPanel.lblTimer.config(text=f"Timer: {self.timeLeft}")
-            self.app.root.after(1000, self.tick)
+            self.timerId=self.app.root.after(1000, self.tick)
         else:
             self.app.headerPanel.lblTimer.config(text="TIME EXPIRED")
+            self.dispatchItinerary()
 
     def advanceDay(self):
         if self.currentDayIdx<len(self.days)-1:
@@ -82,6 +83,7 @@ class GameController:
             self.app.headerPanel.lblDay.config(text=f"Day: {self.days[self.currentDayIdx]}")
             self.data.mutatePrices()
             self.refreshMarketUI()
+            self.updateLedger()
         else: self.app.headerPanel.lblDay.config(text="Day: Sunday (LAST DAY)")
 
 
@@ -154,7 +156,7 @@ class GameController:
         modal.grab_set()
 
         tk.Label(modal, text=f"{stars} Star Review", font=config.fontHeader, bg=config.paper,fg=config.ink).pack(pady=10)
-        tk.Label(modal, text=f'"{stars}"', font=config.fontNarrative, bg=config.paper,fg= config.mutedSlate, wraplength=400).pack(pady=10)
+        tk.Label(modal, text=f'"{text}"', font=config.fontNarrative, bg=config.paper,fg= config.mutedSlate, wraplength=400).pack(pady=10)
         rewardColor = config.sageGreen if reward >=0 else config.terracotta
         tk.Label(modal, text=f"Agency Payout: ${reward:,}", font=config.fontMath, bg=config.paper, fg=rewardColor).pack(pady=10)
         tk.Button(modal, text="Next Client", bg=config.ink, fg=config.paper,command=lambda: [modal.destroy(), self.resetGameCycle()]).pack(pady=15)
@@ -162,11 +164,12 @@ class GameController:
 
     def resetGameCycle(self):
         self.activeClient = random.choice(self.data.clients)
-        self.itinerary = {"flights": None, "lodging": None, "excursion": None}
+        self.itinerary = {"flight": None, "lodging": None, "excursion": None}
         self.timeLeft= 120
         self.app.headerPanel.lblDay.config(text=f"Day: {self.days[self.currentDayIdx]}")
         self.app.ledgerPanel.lblFlightSlot.config(text="Flight: [Empty]")
         self.app.ledgerPanel.lblLodgingSlot.config(text="Lodging: [Empty]")
         self.app.ledgerPanel.lblExcursionSlot.config(text="Excursion: [Empty]")
+        self.currentDayIdx = 0
         self.loadClient()
         self.tick()

@@ -37,6 +37,11 @@ class DataManager:
         self.lodgings=[]
         self.excursions=[]
         self.events = []
+
+        self.coffeeUnlocked= False
+        self.barometerUnlocked= False
+        self.coffeeUsedThisWeek = False
+        self.tomorrowForecast =None
         self.load_databases()
 
     def load_databases(self):
@@ -59,14 +64,35 @@ class DataManager:
                 self.events = [ChaosEvent(e) for e in json.load(f)]
         else: print(f"Missing chaos events file")
 
+    def generateForecast(self):
+        categories = [("flights",self.flights), ("lodgings",self.lodgings), ("excursions", self.excursions)]
+        catName, catList= random.choice(categories)
+        direction = random.choice([1, -1])
+        amount=random.uniform(0.10, 0.25)
+        trendWord= "rising ▲" if direction> 0 else "dropping ▼"
+        text = f"Barometer: Tomorrow's {catName}{trendWord} ~{int(amount*100)}%"
+        self.tomorrowForecast = {
+            "category":catName,
+            "change":direction*amount,
+            "text": text
+        }
+
     def mutatePrices(self):
         volMap = {'low':(0.02, 0.05), 'medium': (0.05, 0.15), 'high': (0.10, 0.30)}
-        for category in (self.flights, self.lodgings, self.excursions):
+
+        forecastCat = self.tomorrowForecast['category'] if self.tomorrowForecast else None
+        forecastChange = self.tomorrowForecast['change'] if self.tomorrowForecast else 0
+        for catName, category in [("flights", self.flights), ("lodgings", self.lodgings), ("excursions", self.excursions)]:
             for item in category:
                 item.prevPrice = item.currentPrice
-                minV, maxV = volMap.get(item.volatility, (0.02, 0.05))
-                change = random.uniform(minV, maxV)*random.choice([1, -1])
+                if catName==forecastCat:
+                    change=forecastChange+random.uniform(-0.02,0.02)
+                else:
+                    minV, maxV= volMap.get(item.volatility, (0.02, 0.05))
+                    change= random.uniform(minV, maxV)*random.choice([1, -1])
                 item.currentPrice = max(1, int(item.currentPrice*(1+change)))
+
+        self.generateForecast()
 
     def evaluate_itinerary(self, client, itinerary):
         tags= set()

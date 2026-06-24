@@ -208,7 +208,7 @@
       "id": "e_306",
       "name": "Tide Pool Exploration and Picnic",
       "country": "Global",
-      "basePrice": "50",
+      "basePrice": 50,
       "tags": ["kid_friendly","beach","shade"],
       "volatility": "low"
     },
