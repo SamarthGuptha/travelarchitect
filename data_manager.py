@@ -1,4 +1,4 @@
-import json, os, random
+import json, os, random, sys
 
 class Client:
     def __init__(self, data):
@@ -44,8 +44,15 @@ class DataManager:
         self.tomorrowForecast =None
         self.load_databases()
 
+    def resourcePath(self, relative_path):
+        try:
+            base_path = sys._MEIPASS
+        except Exception:
+            base_path = os.path.abspath(".")
+        return os.path.join(base_path, relative_path)
+
     def load_databases(self):
-        baseDir = "jsondata"
+        baseDir = self.resourcePath("jsondata")
         clientsPath = os.path.join(baseDir, "clients_database.json")
         if os.path.exists(clientsPath):
             with open(clientsPath, 'r',encoding='utf-8') as f:

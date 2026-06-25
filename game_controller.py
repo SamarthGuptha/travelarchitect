@@ -12,7 +12,9 @@ class GameController:
         self.capital = 10000
         self.rating =3.0
         self.reviewsCount=1
-
+        self.data.generateForecast()
+        self.app.headerPanel.btnShop.config(command=self.openShop)
+        self.app.headerPanel.canvasCoffee.bind("<Button-1>", self.onCoffeeClick)
         self.activeClient = random.choice(self.data.clients) if self.data.clients else None
         self.itinerary = {"flight":None, "lodging":None, "excursion":None}
 
@@ -25,6 +27,63 @@ class GameController:
         self.loadClient()
         self.refreshMarketUI()
         self.tick()
+
+    def openShop(self):
+        modal=tk.Toplevel(self.app.root)
+        modal.title("Stationery Shop")
+        modal.geometry("480x250")
+        modal.configure(bg=config.parchment)
+        modal.transient(self.app.root)
+        modal.grab_set()
+
+        tk.Label(modal, text="Agency Desk Upgrades", font=config.fontHeader, bg=config.parchment, fg=config.ink).pack(pady=10)
+        frameCoffee = tk.Frame(modal, bg=config.paper, padx=10, pady=10)
+        frameCoffee.pack(fill=tk.X, padx=20,pady=5)
+        lblCoffee= tk.Label(frameCoffee,text="☕Mechanical Coffee Mug ($1500)", font=config.fontList, bg= config.paper, fg = config.ink)
+        lblCoffee.pack(anchor="w")
+        tk.Label(frameCoffee, text="Once per client, click the mug to reset 60 seconds of time", font=("Arial",9), bg=config.paper, fg=config.mutedSlate).pack(anchor="w")
+        btnCoffee = tk.Button(frameCoffee, text="Purchased" if self.data.coffeeUnlocked else "Purchase",
+                               state=tk.DISABLED if self.data.coffeeUnlocked else tk.NORMAL,
+                               command=lambda: self.buyUpgrade('coffee', 1500, btnCoffee))
+        btnCoffee.pack(side=tk.RIGHT, pady=(0, 10))
+        frameBaro= tk.Frame(modal, bg=config.paper, padx=10, pady=10)
+        frameBaro.pack(fill=tk.X, padx=20,pady=5)
+        lblBaro=tk.Label(frameBaro, text="🎛️ Analog Desk Barometer ($2,000)", font=config.fontList, bg=config.ink)
+        lblBaro.pack(anchor="w")
+        tk.Label(frameBaro, text="Displays next day's precise price trends.", font=("Arial",9), bg=config.paper,fg =config.mutedSlate).pack(anchor="w")
+        btnBaro = tk.Button(frameBaro, text="purchased" if self.data.barometerUnlocked else "Purchase",
+                            state=tk.DISABLED if self.data.barometerUnlocked else tk.NORMAL, command = lambda: self.buyUpgrade('barometer',2000, btnBaro))
+        btnBaro.pack(side=tk.RIGHT,pady=(0, 10))
+
+    def buyUpgrade(self, upgradeType,cost, btn):
+        if self.capital>=cost:
+            self.capital -= cost
+            if upgradeType == 'coffee':
+                self.data.coffeeUnlocked= True
+            elif upgradeType=='barometer':
+                self.data.barometerUnlocked = True
+
+            btn.config(text="Purchased", state=tk.DISABLED)
+            self.app.headerPanel.lblCapital.config(text=f"Capital: ${self.capital:,}|Rating:{self.rating:.1f}★")
+            self.refreshDeskUpgrades()
+
+    def refreshDeskUpgrades(self):
+        self.app.headerPanel.drawCoffee(self.data.coffeeUnlocked,self.data.coffeeUsedThisWeek)
+        if self.data.barometerUnlocked:
+            text = self.data.tomorrowForecast.get("text", "Barometer: Calibrating...")
+            self.app.dossierPanel.lblBarometer.config(text=text, fg=config.ink)
+        else: self.app.dossierPanel.lblBarometer.config(text="[ Barometer: Slot Locked ]",fg=config.mutedSlate)
+
+    def onCoffeeClick(self, event):
+        if not self.data.coffeeUnlocked:return
+        if self.data.coffeeUsedThisWeek: return
+        self.data.coffeeUsedThisWeek = True
+        self.extendActiveTimer(60)
+        self.refreshDeskUpgrades()
+
+    def extendActiveTimer(self, seconds=60):
+        self.timeLeft=min(120, self.timeLeft+seconds)
+        self.app.headerPanel.lblTimer.config(text=f"Timer: {self.timeLeft}s")
 
     def loadClient(self):
         if not self.activeClient: return
@@ -84,6 +143,7 @@ class GameController:
             self.data.mutatePrices()
             self.refreshMarketUI()
             self.updateLedger()
+            self.refreshDeskUpgrades()
         else: self.app.headerPanel.lblDay.config(text="Day: Sunday (LAST DAY)")
 
 
@@ -170,6 +230,9 @@ class GameController:
         self.app.ledgerPanel.lblFlightSlot.config(text="Flight: [Empty]")
         self.app.ledgerPanel.lblLodgingSlot.config(text="Lodging: [Empty]")
         self.app.ledgerPanel.lblExcursionSlot.config(text="Excursion: [Empty]")
+        self.data.coffeeUsedThisWeek = False
+        self.data.generateForecast()
+        self.refreshDeskUpgrades()
         self.currentDayIdx = 0
         self.loadClient()
         self.tick()
